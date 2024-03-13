@@ -1,4 +1,5 @@
 import 'package:caloriescount/view/goal/model/goal_model.dart';
+import 'package:caloriescount/view/widget/AppButton.dart';
 import 'package:caloriescount/view/widget/AppHeadingText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -63,7 +64,13 @@ class _GoalState extends State<Goal> {
                   ),
                 );
               },
-            )
+            ),
+            const Spacer(),
+            AppButton(
+              name: 'Continue',
+              onPressed: () {},
+            ),
+            const SizedBox(height: 15.0),
           ],
         ),
       )),
