@@ -1,6 +1,8 @@
 import 'package:caloriescount/view/widget/AppHeadingText.dart';
 import 'package:flutter/material.dart';
 
+import '../widget/AppText.dart';
+
 class Goal extends StatefulWidget {
   const Goal({super.key});
 
@@ -21,7 +23,14 @@ class _GoalState extends State<Goal> {
               alignment: Alignment.centerLeft,
               height: 120.0,
               width: double.infinity,
-              child: const AppHeadingText('What are your goals?'),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AppHeadingText('What are your goals?'),
+                  AppText('Select all that apply'),
+                ],
+              ),
             ),
           ],
         ),
