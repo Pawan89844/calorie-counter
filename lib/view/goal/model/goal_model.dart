@@ -8,9 +8,7 @@ class GoalModel {
   GoalModel({required this.id, required this.title, required this.image});
   static const String _baseAsset = 'assets/';
 
-  // String _baseAsset() {
-  //   return 'assets/';
-  // }
+  static List<String> gender = ['Female', 'Male'];
 
   static List<GoalModel> goals = <GoalModel>[
     GoalModel(id: 1, title: 'Lose Weight', image: '${_baseAsset}surface1.svg'),
