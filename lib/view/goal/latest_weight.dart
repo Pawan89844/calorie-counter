@@ -1,4 +1,5 @@
 import 'package:caloriescount/components/HeadingComponent.dart';
+import 'package:caloriescount/widget/AppInputField.dart';
 import 'package:caloriescount/widget/AppText.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,11 @@ class LatestWeight extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(12.0)),
                   )
                 ],
-              )
+              ),
+              const SizedBox(height: 40.0),
+              const AppInputField(
+                hintText: 'Enter Weight',
+              ),
             ],
           ),
         ),
