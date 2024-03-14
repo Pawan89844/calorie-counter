@@ -56,7 +56,7 @@ class Goal extends StatelessWidget {
             name: 'Continue',
             onPressed: () {},
           ),
-          const SizedBox(height: 15.0),
+          const SizedBox(height: 20.0),
         ],
       ),
     )));
