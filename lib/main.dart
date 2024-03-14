@@ -1,7 +1,7 @@
-import 'package:caloriescount/view/goal/goal.dart';
-import 'package:caloriescount/view/goal/latest_weight.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'view/goal/goal_gender.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LatestWeight(),
+      home: const GoalGender(),
     );
   }
 }

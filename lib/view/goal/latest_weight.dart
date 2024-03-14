@@ -1,4 +1,5 @@
 import 'package:caloriescount/components/HeadingComponent.dart';
+import 'package:caloriescount/components/NoteComponent.dart';
 import 'package:caloriescount/widget/AppButton.dart';
 import 'package:caloriescount/widget/AppInputField.dart';
 import 'package:caloriescount/widget/AppText.dart';
@@ -42,7 +43,7 @@ class LatestWeight extends StatelessWidget {
               AppInputField(
                   hintText: 'Enter Weight', controller: _weightController),
               const Spacer(),
-              const NoteWidget(),
+              const NoteComponent(),
               const SizedBox(height: 20.0),
               AppButton(
                 name: 'Continue',
@@ -53,24 +54,6 @@ class LatestWeight extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class NoteWidget extends StatelessWidget {
-  const NoteWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        SvgPicture.asset('assets/icons/shield.svg'),
-        const SizedBox(width: 10.0),
-        const AppText('All of your information is confidential')
-      ],
     );
   }
 }
