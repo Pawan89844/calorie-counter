@@ -4,7 +4,8 @@ import 'package:caloriescount/widget/AppText.dart';
 import 'package:flutter/material.dart';
 
 class LatestWeight extends StatelessWidget {
-  const LatestWeight({super.key});
+  LatestWeight({super.key});
+  final TextEditingController _weightController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +37,8 @@ class LatestWeight extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40.0),
-              const AppInputField(
-                hintText: 'Enter Weight',
-              ),
+              AppInputField(
+                  hintText: 'Enter Weight', controller: _weightController),
             ],
           ),
         ),
