@@ -22,21 +22,21 @@ class GoalGender extends StatelessWidget {
                 subHeading: 'This helps us create your personalized plan',
               ),
               const SizedBox(height: 10.0),
-              // Column(
-              //   children: [
-              //     Container(
-              //       alignment: Alignment.topLeft,
-              //       padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
-              //       child: const AppText('Step 1 of 4'),
-              //     ),
-              //     const LinearProgressIndicator(
-              //       color: Colors.yellow,
-              //       value: .25,
-              //       minHeight: 7.0,
-              //       borderRadius: BorderRadius.all(Radius.circular(12.0)),
-              //     )
-              //   ],
-              // ),
+              Column(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
+                    child: const AppText('Step 3 of 4'),
+                  ),
+                  const LinearProgressIndicator(
+                    color: Colors.yellow,
+                    value: .25,
+                    minHeight: 7.0,
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  )
+                ],
+              ),
               // const SizedBox(height: 40.0),
               // AppInputField(
               //     hintText: 'Enter Weight', controller: _weightController),
