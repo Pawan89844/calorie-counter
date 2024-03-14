@@ -6,14 +6,16 @@ import 'package:flutter/material.dart';
 
 class HeadingComponent extends StatelessWidget {
   final String heading, subHeading;
-  const HeadingComponent(
-      {super.key, required this.heading, required this.subHeading});
+  const HeadingComponent({
+    super.key,
+    required this.heading,
+    required this.subHeading,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
-      height: 120.0,
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
