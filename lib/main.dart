@@ -1,3 +1,4 @@
+import 'package:caloriescount/components/AppBottomNavBar.dart';
 import 'package:caloriescount/view/goal/goal_birthday.dart';
 import 'package:caloriescount/view/home/home.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      home: const AppBottomNavBar(),
     );
   }
 }
