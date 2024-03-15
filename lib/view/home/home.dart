@@ -24,10 +24,67 @@ class Home extends StatelessWidget {
           const SizedBox(width: 20.0)
         ],
       ),
-      body: const SafeArea(
-          child: Column(
-        children: [],
+      body: SafeArea(
+          child: Padding(
+        padding: const EdgeInsets.only(left: 28.0, top: 8.0),
+        child: Column(
+          children: [
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      height: 8.0,
+                      width: 8.0,
+                      decoration: BoxDecoration(
+                          color: Colors.amber.shade200, shape: BoxShape.circle),
+                    ),
+                    const SizedBox(width: 10.0),
+                    const AppHeadingText('Weight', fontSize: 12.0),
+                  ],
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    AppTextTile(
+                      title: '100 kg',
+                      subtitle: 'Starting',
+                    ),
+                    AppTextTile(
+                      title: '100 kg',
+                      subtitle: 'Latest',
+                    ),
+                    AppTextTile(
+                      title: '90 kg',
+                      subtitle: 'Goal',
+                    ),
+                    SizedBox(width: 10.0)
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       )),
+    );
+  }
+}
+
+class AppTextTile extends StatelessWidget {
+  final String title, subtitle;
+  const AppTextTile({
+    super.key,
+    required this.subtitle,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        AppHeadingText(title, fontSize: 16.0),
+        AppText(subtitle, fontSize: 12.0)
+      ],
     );
   }
 }
