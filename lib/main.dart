@@ -1,4 +1,5 @@
 import 'package:caloriescount/view/goal/goal_birthday.dart';
+import 'package:caloriescount/view/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: GoalBirthday(),
+      debugShowCheckedModeBanner: false,
+      home: const Home(),
     );
   }
 }
