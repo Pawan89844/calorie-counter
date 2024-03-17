@@ -11,26 +11,20 @@ class AppBottomNavBar extends StatefulWidget {
 }
 
 class _AppBottomNavBarState extends State<AppBottomNavBar> {
-  int _currentIndex = 0;
-  PageModel page = PageModel();
+  late Pages page;
 
   @override
   void initState() {
     super.initState();
-  }
-
-  void setIndex(int index) {
-    _currentIndex = index;
-    setState(() {});
+    page = Pages();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: page.appPages[_currentIndex].page,
+      body: page.appPages[page.currentIndex].page,
       bottomNavigationBar: BottomAppBar(
         elevation: 0.0,
-        // color: Colors.blue,
         shape: const AutomaticNotchedShape(RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(40.0),
@@ -39,26 +33,15 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
           ...page.appPages
               .mapIndexed(
                 (index, e) => Expanded(
-                    child: GestureDetector(
-                        onTap: () => setIndex(index), child: e.icon)),
+                    child: InkWell(
+                        onTap: () {
+                          page.setPage(index);
+                          setState(() {});
+                        },
+                        child: e.icon)),
               )
               .toList()
-        ]
-            // [
-            //   Expanded(
-            //       child: GestureDetector(
-            //           onTap: () {},
-            //           child: SvgPicture.asset('assets/icons/home.svg'))),
-            //   Expanded(
-            //       child: SvgPicture.asset(
-            //     'assets/icons/crosshair.svg',
-            //     color: Colors.black,
-            //   )),
-            //   const Expanded(child: AppText('')),
-            //   Expanded(child: SvgPicture.asset('assets/icons/clipboard.svg')),
-            //   Expanded(child: SvgPicture.asset('assets/icons/avatar.svg'))
-            // ],
-            ),
+        ]),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
