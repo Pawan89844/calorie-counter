@@ -30,7 +30,9 @@ class Pages implements AppPages {
         PageModel(
             id: 0,
             page: Home(),
-            icon: SvgPicture.asset('assets/icons/home.svg')),
+            icon: SvgPicture.asset(
+              'assets/icons/home.svg',
+            )),
         PageModel(
             id: 1,
             page: const Task(),

@@ -21,6 +21,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
+    // BottomNavigationBar(items: items)
     return Scaffold(
       body: page.appPages[page.currentIndex].page,
       bottomNavigationBar: BottomAppBar(

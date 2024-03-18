@@ -18,9 +18,11 @@ class Goal extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 14.0),
       child: Column(
         children: [
+          const SizedBox(height: 40.0),
           const HeadingComponent(
               heading: 'What are your goals?',
               subHeading: 'Select all that apply'),
+          const SizedBox(height: 30.0),
           GridView.builder(
             shrinkWrap: true,
             primary: false,
