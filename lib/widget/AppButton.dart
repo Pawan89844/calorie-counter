@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 class AppButton extends StatelessWidget {
   final void Function()? onPressed;
   final String name;
+  final double borderRadius;
   const AppButton({
     super.key,
     required this.onPressed,
     required this.name,
+    this.borderRadius = 8.0,
   });
 
   @override
@@ -21,7 +23,7 @@ class AppButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             backgroundColor: Colors.amber.shade300,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0)),
+                borderRadius: BorderRadius.circular(borderRadius)),
             elevation: 0.0),
         child: AppText(name, color: Colors.black),
       ),
