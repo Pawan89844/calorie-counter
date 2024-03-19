@@ -95,7 +95,12 @@ class GoalView extends GetView<GoalController> {
                   child: const SizedBox(height: 20.0)),
               AppButton(
                 name: 'Continue',
-                onPressed: () => controller.setGoalPage(),
+                color: controller.currentGoal.isEmpty
+                    ? Colors.grey
+                    : const Color(0xFFFEE590),
+                onPressed: () => controller.currentGoal.isEmpty
+                    ? null
+                    : controller.setGoalPage(),
               ),
               const SizedBox(height: 20.0),
             ],

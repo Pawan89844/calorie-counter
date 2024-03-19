@@ -7,11 +7,13 @@ class AppButton extends StatelessWidget {
   final void Function()? onPressed;
   final String name;
   final double borderRadius;
+  final Color color;
   const AppButton({
     super.key,
     required this.onPressed,
     required this.name,
     this.borderRadius = 8.0,
+    this.color = const Color(0xFFFEE590),
   });
 
   @override
@@ -21,7 +23,7 @@ class AppButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.amber.shade300,
+            backgroundColor: color,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius)),
             elevation: 0.0),
