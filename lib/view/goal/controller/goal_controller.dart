@@ -23,31 +23,36 @@ class GoalController extends GetxController {
   }
 
   void setGoalPage() {
-    print('Current Page: ${_currenPage.value}');
     switch (_currenPage.value) {
       case GoalPage.goalWeight:
         _currenPage.value = GoalPage.gender;
         _goal.heading(_currenPage.value);
+        _goal.subHeading(_currenPage.value);
         break;
       case GoalPage.latestWeight:
         _currenPage.value = GoalPage.goalWeight;
         _goal.heading(_currenPage.value);
+        _goal.subHeading(_currenPage.value);
         break;
       case GoalPage.gender:
         _currenPage.value = GoalPage.birthday;
         _goal.heading(_currenPage.value);
+        _goal.subHeading(_currenPage.value);
         break;
       case GoalPage.birthday:
         _currenPage.value = GoalPage.home;
         _goal.heading(_currenPage.value);
+        _goal.subHeading(_currenPage.value);
         break;
       case GoalPage.currentPage:
         _currenPage.value = GoalPage.latestWeight;
         _goal.heading(_currenPage.value);
+        _goal.subHeading(_currenPage.value);
         break;
       default:
         _currenPage.value = GoalPage.currentPage;
         _goal.heading(_currenPage.value);
+        _goal.subHeading(_currenPage.value);
         break;
     }
   }

@@ -30,7 +30,8 @@ class GoalView extends GetView<GoalController> {
               HeadingComponent(
                   heading:
                       'What${controller.currentPage.value == GoalPage.currentPage ? ' are' : '\'s'} your ${_goalInfo.heading(controller.currentPage.value)}',
-                  subHeading: 'Select all that apply'),
+                  subHeading:
+                      _goalInfo.subHeading(controller.currentPage.value)),
               const SizedBox(height: 30.0),
               if (controller.currentPage.value == GoalPage.birthday) ...[
                 GoalBirthday()
@@ -45,46 +46,7 @@ class GoalView extends GetView<GoalController> {
                 LatestWeight(),
               ],
               if (controller.currentPage.value == GoalPage.currentPage) ...[
-                GridView.builder(
-                  shrinkWrap: true,
-                  primary: false,
-                  scrollDirection: Axis.vertical,
-                  itemCount: _goalInfo.goals.length,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 6 / 5,
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 10.0),
-                  itemBuilder: (context, index) {
-                    final GoalModel items = _goalInfo.goals[index];
-
-                    return InkWell(
-                      onTap: () => controller.setGoal(items.id),
-                      child: Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: controller.currentGoal.contains(items.id)
-                                    ? const Color(0xFFF7D45E)
-                                    : Colors.black12),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(12.0))),
-                        alignment: Alignment.center,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            SvgPicture.asset(items.image),
-                            AppText(items.title,
-                                color: controller.currentGoal.contains(items.id)
-                                    ? const Color(0xFFF7D45E)
-                                    : null),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
+                GoalsGrid(goalInfo: _goalInfo, controller: controller),
               ],
               const Spacer(),
               Visibility(
@@ -106,5 +68,59 @@ class GoalView extends GetView<GoalController> {
             ],
           )),
     )));
+  }
+}
+
+class GoalsGrid extends StatelessWidget {
+  const GoalsGrid({
+    super.key,
+    required GoalInfo goalInfo,
+    required this.controller,
+  }) : _goalInfo = goalInfo;
+
+  final GoalInfo _goalInfo;
+  final GoalController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      primary: false,
+      scrollDirection: Axis.vertical,
+      itemCount: _goalInfo.goals.length,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 6 / 5,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 10.0),
+      itemBuilder: (context, index) {
+        final GoalModel items = _goalInfo.goals[index];
+
+        return InkWell(
+          onTap: () => controller.setGoal(items.id),
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+                border: Border.all(
+                    color: controller.currentGoal.contains(items.id)
+                        ? const Color(0xFFF7D45E)
+                        : Colors.black12),
+                borderRadius: const BorderRadius.all(Radius.circular(12.0))),
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SvgPicture.asset(items.image),
+                AppText(items.title,
+                    color: controller.currentGoal.contains(items.id)
+                        ? const Color(0xFFF7D45E)
+                        : null),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 }

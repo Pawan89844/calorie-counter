@@ -22,6 +22,16 @@ class GoalInfo implements Goal {
     }
   }
 
+  String subHeading(GoalPage page) {
+    if (page == GoalPage.currentPage) {
+      return 'Select all that apply';
+    } else if (page == GoalPage.latestWeight || page == GoalPage.goalWeight) {
+      return 'You can update your weight anytime';
+    } else {
+      return 'This helps us create your personalized plan';
+    }
+  }
+
   @override
   List<String> gender = ['Female', 'Male'];
 
