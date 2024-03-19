@@ -1,10 +1,12 @@
 import 'package:caloriescount/components/NoteComponent.dart';
+import 'package:caloriescount/view/goal/controller/goal_controller.dart';
 import 'package:caloriescount/widget/AppText.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class GoalBirthday extends StatelessWidget {
-  GoalBirthday({super.key});
+  final GoalController controller;
+  GoalBirthday({super.key, required this.controller});
   final TextEditingController _monthController = TextEditingController();
   final TextEditingController _dayController = TextEditingController();
   final TextEditingController _yearController = TextEditingController();
@@ -43,7 +45,7 @@ class GoalBirthday extends StatelessWidget {
                   inputDecorationTheme: const InputDecorationTheme(
                       border: InputBorder.none, isCollapsed: true),
                   trailingIcon: SvgPicture.asset('assets/icons/back.svg'),
-                  dropdownMenuEntries: ['Jan', 'Feb', 'March', 'April']
+                  dropdownMenuEntries: controller.month
                       .map((e) => DropdownMenuEntry(
                             value: e,
                             label: e,

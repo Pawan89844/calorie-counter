@@ -1,10 +1,12 @@
+import 'package:caloriescount/view/goal/logic/goal_information.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../logic/goal_info.dart';
 
 enum GoalPage { latestWeight, goalWeight, gender, birthday, currentPage, home }
 
-class GoalController extends GetxController {
+class GoalController extends GetxController with GoalInformation {
   ///Goal Info is a Logic class which contains static data model creation part.
   final GoalInfo _goal = GoalInfo();
   final RxList _selectedGoal = [].obs;
@@ -17,6 +19,19 @@ class GoalController extends GetxController {
   /// current page property is the [GoalPage] index.
   Rx<GoalPage> get currentPage => _currenPage;
 
+  GoalInfo get goal => _goal;
+
+  Rx<TextEditingController> latestWeightController =
+      TextEditingController().obs;
+  Rx<TextEditingController> goalWeightController = TextEditingController().obs;
+
+  ///Temperary reactive variables to make Continue button color changed.
+  RxString tempLatWeightController = ''.obs;
+  RxString tempGoalWeightController = ''.obs;
+
+  ///Stores the selected gender from user input.
+  RxString selectedGender = ''.obs;
+
   /// Set Goal Method is for adding the Goal into [_selectedGoal] List
   void setGoal(int itemId) {
     if (!_selectedGoal.contains(itemId)) {
@@ -26,12 +41,27 @@ class GoalController extends GetxController {
     }
   }
 
+  @override
+  void onInit() {
+    super.onInit();
+    getMonth();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    latestWeightController.value.dispose();
+    goalWeightController.value.dispose();
+  }
+
   /// A Private method which reduces the redundency of assigning the page, heading, and subheading.
   void _setPage(GoalPage page) {
     _currenPage.value = page;
     _goal.heading(_currenPage.value);
     _goal.subHeading(_currenPage.value);
   }
+
+  void _importMDY() {}
 
   /// setGoal method is for setting the page based on the [_currentPage.value]. It sets the next page from current page.
   void setGoalPage() {

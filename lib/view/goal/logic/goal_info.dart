@@ -1,6 +1,6 @@
 import 'package:caloriescount/view/goal/controller/goal_controller.dart';
 import 'package:caloriescount/view/goal/model/goal_model.dart';
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 class GoalInfo implements Goal {
   static const String _baseAsset = 'assets/';
@@ -29,6 +29,57 @@ class GoalInfo implements Goal {
       return 'You can update your weight anytime';
     } else {
       return 'This helps us create your personalized plan';
+    }
+  }
+
+  void colorLogicInGoalWeightField(String value, GoalController controller) {
+    if (value.isEmpty) {
+      controller.tempGoalWeightController.value = value;
+    } else if (value.isNotEmpty) {
+      controller.tempGoalWeightController.value = value;
+    }
+  }
+
+  void colorLogicInLatestWeightField(String value, GoalController controller) {
+    if (value.isEmpty) {
+      controller.tempLatWeightController.value = value;
+    } else if (value.isNotEmpty) {
+      controller.tempLatWeightController.value = value;
+    }
+  }
+
+  Color colorLogic(GoalController controller) {
+    if (controller.currentGoal.isNotEmpty &&
+        controller.currentPage.value == GoalPage.currentPage) {
+      return Colors.amber.shade300;
+    } else if (controller.tempLatWeightController.value.isNotEmpty &&
+        controller.currentPage.value == GoalPage.latestWeight) {
+      return Colors.amber.shade300;
+    } else if (controller.tempGoalWeightController.value.isNotEmpty &&
+        controller.currentPage.value == GoalPage.goalWeight) {
+      return Colors.amber.shade300;
+    } else if (controller.selectedGender.value.isNotEmpty &&
+        controller.currentPage.value == GoalPage.gender) {
+      return Colors.amber.shade300;
+    }
+    return Colors.grey;
+  }
+
+  void continueLogic(GoalController controller) {
+    if (controller.currentGoal.isNotEmpty &&
+        controller.currentPage.value == GoalPage.currentPage) {
+      return controller.setGoalPage();
+    } else if (controller.latestWeightController.value.text.isNotEmpty &&
+        controller.currentPage.value == GoalPage.latestWeight) {
+      return controller.setGoalPage();
+    } else if (controller.goalWeightController.value.text.isNotEmpty &&
+        controller.currentPage.value == GoalPage.goalWeight) {
+      return controller.setGoalPage();
+    } else if (controller.selectedGender.value.isNotEmpty &&
+        controller.currentPage.value == GoalPage.gender) {
+      return controller.setGoalPage();
+    } else {
+      return;
     }
   }
 

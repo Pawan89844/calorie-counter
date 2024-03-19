@@ -5,11 +5,14 @@ import 'package:flutter/material.dart';
 class AppInputField extends StatelessWidget {
   final TextEditingController? controller;
   final String hintText;
-  const AppInputField({
-    super.key,
-    this.controller,
-    required this.hintText,
-  });
+  final void Function(String value)? onSubmitted, onChanged;
+
+  const AppInputField(
+      {super.key,
+      this.controller,
+      required this.hintText,
+      this.onSubmitted,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,8 @@ class AppInputField extends StatelessWidget {
       child: TextField(
         controller: controller,
         keyboardType: TextInputType.number,
+        onChanged: onChanged,
+        onSubmitted: onSubmitted,
         decoration: InputDecoration(
           labelText: hintText,
           contentPadding: const EdgeInsets.only(left: 12.0, top: 20.0),

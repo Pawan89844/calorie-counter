@@ -24,49 +24,48 @@ class GoalView extends GetView<GoalController> {
         body: SafeArea(
             child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 14.0),
-      child: Obx(() => Column(
-            children: [
-              const SizedBox(height: 40.0),
-              HeadingComponent(
-                  heading:
-                      'What${controller.currentPage.value == GoalPage.currentPage ? ' are' : '\'s'} your ${_goalInfo.heading(controller.currentPage.value)}',
-                  subHeading:
-                      _goalInfo.subHeading(controller.currentPage.value)),
-              const SizedBox(height: 30.0),
-              if (controller.currentPage.value == GoalPage.birthday) ...[
-                GoalBirthday()
-              ],
-              if (controller.currentPage.value == GoalPage.gender) ...[
-                const GoalGender(),
-              ],
-              if (controller.currentPage.value == GoalPage.goalWeight) ...[
-                GoalWeight(),
-              ],
-              if (controller.currentPage.value == GoalPage.latestWeight) ...[
-                LatestWeight(),
-              ],
-              if (controller.currentPage.value == GoalPage.currentPage) ...[
-                GoalsGrid(goalInfo: _goalInfo, controller: controller),
-              ],
-              const Spacer(),
-              Visibility(
-                  visible: controller.currentPage.value != GoalPage.currentPage,
-                  child: const NoteComponent()),
-              Visibility(
-                  visible: controller.currentPage.value != GoalPage.currentPage,
-                  child: const SizedBox(height: 20.0)),
-              AppButton(
-                name: 'Continue',
-                color: controller.currentGoal.isEmpty
-                    ? Colors.grey
-                    : const Color(0xFFFEE590),
-                onPressed: () => controller.currentGoal.isEmpty
-                    ? null
-                    : controller.setGoalPage(),
-              ),
-              const SizedBox(height: 20.0),
+      child: Obx(() {
+        print(
+            'Controller value: ${controller.latestWeightController.value.text}');
+        return Column(
+          children: [
+            const SizedBox(height: 40.0),
+            HeadingComponent(
+                heading:
+                    'What${controller.currentPage.value == GoalPage.currentPage ? ' are' : '\'s'} your ${_goalInfo.heading(controller.currentPage.value)}',
+                subHeading: _goalInfo.subHeading(controller.currentPage.value)),
+            const SizedBox(height: 30.0),
+            if (controller.currentPage.value == GoalPage.birthday) ...[
+              GoalBirthday(controller: controller),
             ],
-          )),
+            if (controller.currentPage.value == GoalPage.gender) ...[
+              GoalGender(controller: controller),
+            ],
+            if (controller.currentPage.value == GoalPage.goalWeight) ...[
+              GoalWeight(controller: controller),
+            ],
+            if (controller.currentPage.value == GoalPage.latestWeight) ...[
+              LatestWeight(controller: controller),
+            ],
+            if (controller.currentPage.value == GoalPage.currentPage) ...[
+              GoalsGrid(goalInfo: _goalInfo, controller: controller),
+            ],
+            const Spacer(),
+            Visibility(
+                visible: controller.currentPage.value != GoalPage.currentPage,
+                child: const NoteComponent()),
+            Visibility(
+                visible: controller.currentPage.value != GoalPage.currentPage,
+                child: const SizedBox(height: 20.0)),
+            AppButton(
+              name: 'Continue',
+              color: _goalInfo.colorLogic(controller),
+              onPressed: () => _goalInfo.continueLogic(controller),
+            ),
+            const SizedBox(height: 20.0),
+          ],
+        );
+      }),
     )));
   }
 }

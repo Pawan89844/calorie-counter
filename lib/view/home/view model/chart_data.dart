@@ -30,7 +30,6 @@ class ChartData implements Chart {
         _age.add(item);
       }
     });
-    print('Age: $_age');
   }
 
   @override
