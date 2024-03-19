@@ -17,12 +17,12 @@ class GoalWeight extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
+              padding: const EdgeInsets.only(bottom: 10.0),
               child: const AppText('Step 2 of 4'),
             ),
             const LinearProgressIndicator(
               color: Colors.yellow,
-              value: .25,
+              value: .50,
               minHeight: 7.0,
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
             )
@@ -30,14 +30,6 @@ class GoalWeight extends StatelessWidget {
         ),
         const SizedBox(height: 40.0),
         AppInputField(hintText: 'Enter Weight', controller: _weightController),
-        // const Spacer(),
-        // const NoteComponent(),
-        // const SizedBox(height: 20.0),
-        // AppButton(
-        //   name: 'Continue',
-        //   onPressed: () {},
-        // ),
-        const SizedBox(height: 20.0),
       ],
     );
     // return Scaffold(

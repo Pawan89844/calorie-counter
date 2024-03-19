@@ -17,7 +17,7 @@ class GoalBirthday extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
+              padding: const EdgeInsets.only(bottom: 10.0),
               child: const AppText('Step 4 of 4'),
             ),
             const LinearProgressIndicator(

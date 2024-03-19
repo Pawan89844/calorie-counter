@@ -27,7 +27,7 @@ class _GoalGenderState extends State<GoalGender> {
           children: [
             Container(
               alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
+              padding: const EdgeInsets.only(bottom: 10.0),
               child: const AppText('Step 3 of 4'),
             ),
             const LinearProgressIndicator(
@@ -78,8 +78,6 @@ class _GoalGenderState extends State<GoalGender> {
             );
           },
         ),
-        // const Spacer(),
-        // const NoteComponent(),
       ],
     );
     // return Scaffold(

@@ -22,37 +22,31 @@ class GoalController extends GetxController {
     }
   }
 
+  void _setPage(GoalPage page) {
+    _currenPage.value = page;
+    _goal.heading(_currenPage.value);
+    _goal.subHeading(_currenPage.value);
+  }
+
   void setGoalPage() {
     switch (_currenPage.value) {
       case GoalPage.goalWeight:
-        _currenPage.value = GoalPage.gender;
-        _goal.heading(_currenPage.value);
-        _goal.subHeading(_currenPage.value);
+        _setPage(GoalPage.gender);
         break;
       case GoalPage.latestWeight:
-        _currenPage.value = GoalPage.goalWeight;
-        _goal.heading(_currenPage.value);
-        _goal.subHeading(_currenPage.value);
+        _setPage(GoalPage.goalWeight);
         break;
       case GoalPage.gender:
-        _currenPage.value = GoalPage.birthday;
-        _goal.heading(_currenPage.value);
-        _goal.subHeading(_currenPage.value);
+        _setPage(GoalPage.birthday);
         break;
       case GoalPage.birthday:
-        _currenPage.value = GoalPage.home;
-        _goal.heading(_currenPage.value);
-        _goal.subHeading(_currenPage.value);
+        _setPage(GoalPage.home);
         break;
       case GoalPage.currentPage:
-        _currenPage.value = GoalPage.latestWeight;
-        _goal.heading(_currenPage.value);
-        _goal.subHeading(_currenPage.value);
+        _setPage(GoalPage.latestWeight);
         break;
       default:
-        _currenPage.value = GoalPage.currentPage;
-        _goal.heading(_currenPage.value);
-        _goal.subHeading(_currenPage.value);
+        _setPage(GoalPage.currentPage);
         break;
     }
   }

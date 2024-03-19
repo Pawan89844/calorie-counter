@@ -1,6 +1,3 @@
-import 'package:caloriescount/components/HeadingComponent.dart';
-import 'package:caloriescount/components/NoteComponent.dart';
-import 'package:caloriescount/widget/AppButton.dart';
 import 'package:caloriescount/widget/AppInputField.dart';
 import 'package:caloriescount/widget/AppText.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +14,7 @@ class LatestWeight extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.topLeft,
-              padding: const EdgeInsets.only(top: 14.0, bottom: 14.0),
+              padding: const EdgeInsets.only(bottom: 10.0),
               child: const AppText('Step 1 of 4'),
             ),
             const LinearProgressIndicator(
@@ -30,9 +27,6 @@ class LatestWeight extends StatelessWidget {
         ),
         const SizedBox(height: 40.0),
         AppInputField(hintText: 'Enter Weight', controller: _weightController),
-        // const Spacer(),
-        // const NoteComponent(),
-        const SizedBox(height: 20.0),
       ],
     );
     // return Scaffold(
