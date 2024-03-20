@@ -49,34 +49,38 @@ class GoalInfo implements Goal {
   }
 
   Color colorLogic(GoalController controller) {
-    if (controller.currentGoal.isNotEmpty &&
-        controller.currentPage.value == GoalPage.currentPage) {
-      return Colors.amber.shade300;
-    } else if (controller.tempLatWeightController.value.isNotEmpty &&
-        controller.currentPage.value == GoalPage.latestWeight) {
-      return Colors.amber.shade300;
-    } else if (controller.tempGoalWeightController.value.isNotEmpty &&
-        controller.currentPage.value == GoalPage.goalWeight) {
-      return Colors.amber.shade300;
-    } else if (controller.selectedGender.value.isNotEmpty &&
-        controller.currentPage.value == GoalPage.gender) {
-      return Colors.amber.shade300;
+    Color activeColor = Colors.amber.shade300;
+    Color inActiveColor = Colors.grey;
+    bool isCurrentGoal = controller.currentGoal.isNotEmpty;
+    GoalPage currentPage = controller.currentPage.value;
+    bool selectedGender = controller.selectedGender.value.isNotEmpty;
+    bool temWeight = controller.tempLatWeightController.value.isNotEmpty;
+    bool tempGoalWeight = controller.tempGoalWeightController.value.isNotEmpty;
+    if (isCurrentGoal && currentPage == GoalPage.currentPage) {
+      return activeColor;
+    } else if (temWeight && currentPage == GoalPage.latestWeight) {
+      return activeColor;
+    } else if (tempGoalWeight && currentPage == GoalPage.goalWeight) {
+      return activeColor;
+    } else if (selectedGender && currentPage == GoalPage.gender) {
+      return activeColor;
     }
-    return Colors.grey;
+    return inActiveColor;
   }
 
   void continueLogic(GoalController controller) {
-    if (controller.currentGoal.isNotEmpty &&
-        controller.currentPage.value == GoalPage.currentPage) {
+    bool isCurrentGoal = controller.currentGoal.isNotEmpty;
+    GoalPage currentPage = controller.currentPage.value;
+    bool selectedGender = controller.selectedGender.value.isNotEmpty;
+    bool temWeight = controller.tempLatWeightController.value.isNotEmpty;
+    bool tempGoalWeight = controller.tempGoalWeightController.value.isNotEmpty;
+    if (isCurrentGoal && currentPage == GoalPage.currentPage) {
       return controller.setGoalPage();
-    } else if (controller.latestWeightController.value.text.isNotEmpty &&
-        controller.currentPage.value == GoalPage.latestWeight) {
+    } else if (temWeight && currentPage == GoalPage.latestWeight) {
       return controller.setGoalPage();
-    } else if (controller.goalWeightController.value.text.isNotEmpty &&
-        controller.currentPage.value == GoalPage.goalWeight) {
+    } else if (tempGoalWeight && currentPage == GoalPage.goalWeight) {
       return controller.setGoalPage();
-    } else if (controller.selectedGender.value.isNotEmpty &&
-        controller.currentPage.value == GoalPage.gender) {
+    } else if (selectedGender && currentPage == GoalPage.gender) {
       return controller.setGoalPage();
     } else {
       return;
