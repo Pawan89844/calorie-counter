@@ -26,9 +26,7 @@ mixin class GoalInformation {
     });
   }
 
-  // void getDays() {
-  //   List.generate(length, (i) => null);
-  // }
+  void getDays() {}
   // void getYear() {
   //   List.generate(length, (i) => null);
   // }
