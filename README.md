@@ -1,16 +1,15 @@
-<p>**Calories Counter App**</p>
-<p><br></p>
-<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **App Features**</p>
-<p>1. The user can set goals for calorie burn.</p>
-<p>2. Calories Calculator.</p>
-<p>3. Beautiful, Smooth, and Responsive UI/UX</p>
-<p>4. A chart is available to track the set goals.</p>
-<p><br></p>
+<p style="text-align: center;"><strong><u><span style="font-size: 22px; font-family: Impact, Charcoal, sans-serif;">Calories Counter App</span></u></strong></p>
+<p style="text-align: left;"><strong><span style="font-family: Impact, Charcoal, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp; <u>App Features</u></span></strong></p>
+<ol>
+    <li>The user can set goals for calorie burn</li>
+    <li>Calories Calculator.</li>
+    <li>Beautiful, Smooth, and Responsive UI/UX</li>
+    <li>A chart is available to track the set goals.</li>
+</ol>
 <p>More Features are lined up and will be added soon...........</p>
-<p><br></p>
-<p>**DEV**</p>
+<p><strong><span style="font-family: Georgia, serif; font-size: 22px;">DEV</span></strong></p>
 <p>A Flutter and Dart Project built using Getx (State Management Solution) on MVVM clean architecture.</p>
-<p>-- **Folder Structure**</p>
+<p>-- <strong><u>Folder Structure</u></strong></p>
 <p>&nbsp; &nbsp; |</p>
 <p>&nbsp; &nbsp; |___ Components</p>
 <p>&nbsp; &nbsp; |</p>
@@ -29,19 +28,19 @@
 <p>&nbsp; &nbsp; |--- main.dart</p>
 <p><br></p>
 <p><br></p>
-<p>**Components: ** It contains unique widgets such as Bottom Navigation Bar, Heading, and NoteComponent.</p>
-<p>**Routes: ** It has defined page navigation routes for example GOAL PAGE and HOME PAGE.</p>
-<p>**View: ** Structured for UI Layer of the Application, consists of the Page name folder inside the folder with 3 different folders for Bindings, Controllers, Logic, and Model on every page, then view files.</p>
+<p><strong>Components:</strong> It contains unique widgets such as Bottom Navigation Bar, Heading, and NoteComponent.</p>
+<p><strong>Routes:</strong> It has defined page navigation routes for example GOAL PAGE and HOME PAGE.</p>
+<p><strong>View:</strong> Structured for UI Layer of the Application, consists of the Page name folder inside the folder with 3 different folders for Bindings, Controllers, Logic, and Model on every page, then view files.</p>
 <ol>
-    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **BINDINGS** used for keeping Getx Page Binding.</li>
-    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Controllers** State manipulation variables and functions are defined only.</li>
-    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Logic** Methods defined that use complex logic on the application.</li>
-    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Model** Data Model or Parsing model in the future if REST API is Integrated.</li>
+    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>BINDINGS:</strong> used for keeping Getx Page Binding.</li>
+    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>Controllers:</strong> State manipulation variables and functions are defined only.</li>
+    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>Logic:</strong> Methods defined that use complex logic on the application.</li>
+    <li>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>Model:&nbsp;</strong>Data Model or Parsing model in the future if REST API is Integrated.</li>
 </ol>
 <p><br></p>
-<p>**Widgets: ** keeps commonly used widgets in the app.</p>
+<p><strong>Widgets:</strong> keeps commonly used widgets in the app.</p>
 <p><br></p>
-<p>**DART FEATURE USED**</p>
+<p><strong>DART FEATURE USED</strong></p>
 <p><br></p>
 <p>&nbsp; --- Interfaces</p>
 <p>&nbsp; --- Inheritance</p>
@@ -50,8 +49,7 @@
 <p>&nbsp; --- Extensions (In Future)</p>
 <p>&nbsp; --- Collections (To use ADT)</p>
 <p><br></p>
-<p>**FLUTTER PACKAGE USED**</p>
-<p><br></p>
+<p><strong>FLUTTER PACKAGE USED</strong></p>
 <p>&nbsp; --- Google Fonts</p>
 <p>&nbsp; --- Flutter SVG</p>
 <p>&nbsp; --- GetX</p>
