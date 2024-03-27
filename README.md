@@ -1,5 +1,5 @@
 <h1 id="isPasted" style="text-align: center;"><span style="background-color: #000000; color: #ffffff;"><strong><u>Calories Counter App</u></strong></span></h1>
-<h2><strong>&nbsp; &nbsp; <u>App Features</u></strong></h2>
+<h1 style="text-align: center;"><strong><u>App Features</u></strong></h1>
 <ol>
 <li>The user can set goals for calorie burn</li>
 <li>Calories Calculator.</li>
